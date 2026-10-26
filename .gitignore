@@ -17,9 +17,7 @@ dist-ssr
 .env.local
 .env.*.local
 *.local
-scripts/set_user_env.ps1
-scripts/create_repo.ps1
-scripts/git_push.ps1
+scripts/*.ps1
 
 # Netlify local files
 .netlify
