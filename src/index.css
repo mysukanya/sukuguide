@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-dark: #080c10;
+    --border-dark: #1f2937;
+  }
+
+  body {
+    background-color: #080c10;
+    color: #e5e7eb;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom subtle terminal scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080c10;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+  }
+}
+
+/* Monospace font utility for headers, tags and commands */
+.font-mono-cyber {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Subtle cyber grid background effect */
+.bg-grid-cyber {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(31, 41, 55, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 41, 55, 0.25) 1px, transparent 1px);
+}
+
+/* Terminal blinking cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 15px;
+  background-color: #10b981;
+  vertical-align: middle;
+  animation: blink 1s step-start infinite;
+}
+
+/* Pulsing status indicator */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+.status-pulse {
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
